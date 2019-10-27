@@ -1,4 +1,6 @@
-# NGJOGO
+# JOGO DA VELHA
+Jogo da velha feito em Angular.
+Projeto da faculdade na matéria de desenvolvimento móvel.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.7.
 
