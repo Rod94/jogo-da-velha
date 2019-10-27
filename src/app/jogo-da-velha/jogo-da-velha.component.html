@@ -1,0 +1,133 @@
+<div>
+    <h2>Jogo da velha</h2>
+    <!-- tela incial-->
+    <div class="principal" *ngIf="showInicio">
+        <form name='formulario'  method='get'>   
+            Jogador 1 <input class="inputBorder" type="text" [(ngModel)]="jogador1" name="first">
+            <br>
+            <br>
+            Jogador 2 <input class="inputBorder" type="text" [(ngModel)]="jogador2" [ngModelOptions]="{standalone: true}">
+            <br>
+            <br>
+            <br>
+            <br>
+        <a href="#" class="botao" (click)="iniciarJogo()">
+            Iniciar
+        </a>
+        </form>
+    </div> <!-- fim tela incial -->
+    
+    <!-- tabuleiro-->
+
+    
+    <div *ngIf="showTabuleiro">
+            
+        <form name='placar'  method='get'>    
+            <table border="2" align="center" class ="table">
+                <tr>
+                    <td>{{ jogador1 }}</td>
+                    <td [(ngModel)] = "resultado1" name="blade">{{ resultado1 }}</td>
+                </tr>
+                <tr>
+                    <td>{{ jogador2 }}</td>
+                    <td [(ngModel)] = "resultado2" [ngModelOptions]="{standalone: true}">{{ resultado2 }}</td>
+                </tr>
+            </table>
+        </form>        
+                    
+
+        <ul>
+            <li class="kz-border-bottom kz-border-right"
+            [ngClass]="{
+                'kz-img-x': exibirX(0,0),
+                'kz-img-o': exibirO(0,0),
+                'kz-cor-vitoria': exibirVitoria(0,0)
+            }"(click)="jogar(0,0)"></li>
+
+            <li class="kz-border-bottom kz-border-right"
+            [ngClass]="{
+                'kz-img-x': exibirX(0,1),
+                'kz-img-o': exibirO(0,1),
+                'kz-cor-vitoria': exibirVitoria(0,1)
+            }"(click)="jogar(0,1)"></li>
+
+            <li class="kz-border-bottom"
+            [ngClass]="{
+                'kz-img-x': exibirX(0,2),
+                'kz-img-o': exibirO(0,2),
+                'kz-cor-vitoria': exibirVitoria(0,2)
+            }"(click)="jogar(0,2)"></li>
+
+            <li class="kz-border-bottom kz-border-right"
+            [ngClass]="{
+                'kz-img-x': exibirX(1,0),
+                'kz-img-o': exibirO(1,0),
+                'kz-cor-vitoria': exibirVitoria(1,0)
+            }"(click)="jogar(1,0)"></li>
+
+            <li class="kz-border-bottom kz-border-right"
+            [ngClass]="{
+                'kz-img-x': exibirX(1,1),
+                'kz-img-o': exibirO(1,1),
+                'kz-cor-vitoria': exibirVitoria(1,1)
+            }"(click)="jogar(1,1)"></li>
+
+            <li class="kz-border-bottom"
+            [ngClass]="{
+                'kz-img-x': exibirX(1,2),
+                'kz-img-o': exibirO(1,2),
+                'kz-cor-vitoria': exibirVitoria(1,2)
+            }"(click)="jogar(1,2)"></li>
+
+            <li class="kz-border-right"
+            [ngClass]="{
+                'kz-img-x': exibirX(2,0),
+                'kz-img-o': exibirO(2,0),
+                'kz-cor-vitoria': exibirVitoria(2,0)
+            }"(click)="jogar(2,0)"></li>
+
+            <li class="kz-border-right"
+            [ngClass]="{
+                'kz-img-x': exibirX(2,1),
+                'kz-img-o': exibirO(2,1),
+                'kz-cor-vitoria': exibirVitoria(2,1)
+            }"(click)="jogar(2,1)"></li>
+            <li
+            [ngClass]="{
+                'kz-img-x': exibirX(2,2),
+                'kz-img-o': exibirO(2,2),
+                'kz-cor-vitoria': exibirVitoria(2,2)
+            }"(click)="jogar(2,2)"></li>
+       
+            
+        </ul>
+    
+    </div>
+
+    <!--fim tabuleiro-->
+
+    <!--tela final-->
+    <div *ngIf="showFinal">
+        <span>
+            <p *ngIf="jogador==2">{{ jogador1 }} venceu</p>
+            <p *ngIf="jogador==1">{{ jogador2 }} venceu</p>
+            <p *ngIf="jogador==0">o jogo terminou empatado ...</p>
+            <br />
+            <a href="#" class="botao"
+            (click)="novoJogo()">
+                Jogar novamente
+            </a>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="http://localhost:4200/" class="botao" >
+                    Resetar
+                </a>
+                
+        </span>
+    </div>
+    <!--fim tela final-->
+    
+</div>
