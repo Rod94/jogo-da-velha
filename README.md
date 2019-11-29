@@ -8,4 +8,4 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-![primeiro](/assets/imagens/primeiro.png)
+![primeiro](/src/assets/imagens/primeiro.png)  ![segundo](/src/assets/imagens/segundo.png) ![ultimo](/src/assets/imagens/ultimo.png)  
